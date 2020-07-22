@@ -1,4 +1,22 @@
 
+.loading-container{
+  text-align: center;
+  height: 400px;
+  position: relative;
+
+  p{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 28px;
+  }
+
+}
+
+
 .author-info{
   margin-top: 25px;
   margin-bottom: 25px;
@@ -12,7 +30,7 @@
 }
 
 
-.progress-select-box{
+.controller-box{
   margin-top: 25px;
 
   .btn-box{

@@ -1,6 +1,6 @@
-<div class="bar-box">
+<div  aria-label="progress bar" class="bar-box">
     <span class="text"> &nbsp;
-       <span class="percent"> {{showPercent}}%</span>
+       <span  [attr.aria-label]="'the progress bar shows value' + showPercent + 'percent'"  class="percent"> {{showPercent}}%</span>
     </span>
     <div [style.width]="percent+'%'"
          [ngStyle]="{'background': isRed  ? 'red' : 'lightblue' }"

@@ -19,9 +19,12 @@ export class ProgressBarComponent implements OnInit {
 
     constructor(
         private dataService: ProgressBarService
-    ) {}
+    ) {
+    }
 
 
+    public demoName = 'Progress Bar Demo';
+    public authorInfo = 'tony cai, email: hanchangcai@gmail.com';
     public progressData: ProgressBar;
     public progressString = '#progress';
     public pickOption: string = this.progressString + ' 1';

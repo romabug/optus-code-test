@@ -1,14 +1,20 @@
-<div class="container-fluid text-left " *ngIf="progressData">
+<ng-template #loading>
+    <div aria-label="loading the application" class="loading-container">
+        <p>Loading...</p>
+    </div>
+</ng-template>
 
-    <div class="row author-info">
+<div class="container text-left " *ngIf="progressData else loading">
+
+    <div aria-label="application information" class="row author-info">
         <div class="col-sm-8 col-lg-6">
-            <h3>Progress Bar Demo</h3>
-            <p>Author: tony cai, email: hanchangcai@gmail.com </p>
+            <h3> {{demoName}}</h3>
+            <p> {{authorInfo}} </p>
         </div>
     </div>
 
 
-    <div class="row progress-bar-box">
+    <div aria-label="progress bars" class="row progress-bar-box">
         <div class="col-sm-8 col-lg-6">
             <div class="progress-bar" *ngFor="let bar of progressData.bars; let i = index;  let c = count;">
                 <app-bar #selectedBar [limit]="progressData.limit" [percent]="bar"></app-bar>
@@ -16,17 +22,19 @@
         </div>
     </div>
 
-    <div class="row progress-select-box">
-        <div class="col-sm-8 col-lg-2">
+    <div aria-label="select a bar" class="row controller-box">
+        <div class="col-sm-8 col-lg-2 bar-selection">
             <div class="form-group">
                 <select class="form-control" id="barSelect" name="select-progress" [(ngModel)]="pickOption">
-                    <option *ngFor="let bar of progressData.bars;  let i = index; ">
+                    <option [attr.aria-label]="'select on progress bar' + i"
+                            *ngFor="let bar of progressData.bars;  let i = index; ">
                         {{progressString}} {{i+1}}
                     </option>
                 </select>
             </div>
         </div>
-        <div class="col-sm-8 col-lg-4">
+
+        <div aria-label="click on a button to adjust progress bar" class="col-sm-8 col-lg-4 progress-bar-buttons">
             <div class="btn-box">
              <span *ngFor="let btn of progressData.buttons ">
                <app-button (actionEmitter)="handleButtonHit($event)" [action]="btn"> </app-button>
@@ -35,7 +43,6 @@
 
         </div>
     </div>
-
 
 </div>
 

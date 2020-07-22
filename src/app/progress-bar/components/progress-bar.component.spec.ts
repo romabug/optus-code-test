@@ -26,6 +26,15 @@ describe('ProgressBarComponent', () => {
     });
 
 
+    it(`should render demo name`, async(() => {
+        expect(component.demoName).toEqual('Progress Bar Demo');
+    }));
+
+    it(`should render author information`, async(() => {
+        expect(component.authorInfo).toContain('tony');
+    }));
+
+
     it(' should render select options', () => {
 
         progressBarService = TestBed.get(ProgressBarService);
