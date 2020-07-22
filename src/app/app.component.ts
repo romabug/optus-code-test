@@ -1,0 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+
+
+@Component({
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss']
+})
+export class AppComponent implements OnInit {
+
+    public title = 'Progress Bar Demo';
+
+    ngOnInit() {
+
+    }
+
+    constructor() {
+
+    }
+
+
+}
+

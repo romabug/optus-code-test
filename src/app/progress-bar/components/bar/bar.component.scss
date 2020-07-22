@@ -1,0 +1,39 @@
+
+.bar-box {
+
+  width: 100%;
+  border: 1px solid black;
+  height: auto;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+
+  .text {
+
+    text-align: center;
+    font-size: 22px;
+    line-height: 1.6;
+
+    .percent {
+      color: #011420;
+      position: absolute;
+      z-index: 22;
+      width: 100%;
+      display: block;
+      left: 0;
+      top: 0;
+    }
+
+  }
+
+  .bar-content {
+    position: absolute;
+    top: 0;
+
+    height: 100%;
+    background: lightblue;
+
+    transition: 0.2s width;
+  }
+
+}

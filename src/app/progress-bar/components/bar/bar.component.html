@@ -1,0 +1,9 @@
+<div class="bar-box">
+    <span class="text"> &nbsp;
+       <span class="percent"> {{showPercent}}%</span>
+    </span>
+    <div [style.width]="percent+'%'"
+         [ngStyle]="{'background': isRed  ? 'red' : 'lightblue' }"
+         class="bar-content"></div>
+</div>
+

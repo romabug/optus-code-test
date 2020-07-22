@@ -1,0 +1,41 @@
+<div class="container-fluid text-left " *ngIf="progressData">
+
+    <div class="row author-info">
+        <div class="col-sm-8 col-lg-6">
+            <h3>Progress Bar Demo</h3>
+            <p>Author: tony cai, email: hanchangcai@gmail.com </p>
+        </div>
+    </div>
+
+
+    <div class="row progress-bar-box">
+        <div class="col-sm-8 col-lg-6">
+            <div class="progress-bar" *ngFor="let bar of progressData.bars; let i = index;  let c = count;">
+                <app-bar #selectedBar [limit]="progressData.limit" [percent]="bar"></app-bar>
+            </div>
+        </div>
+    </div>
+
+    <div class="row progress-select-box">
+        <div class="col-sm-8 col-lg-2">
+            <div class="form-group">
+                <select class="form-control" id="barSelect" name="select-progress" [(ngModel)]="pickOption">
+                    <option *ngFor="let bar of progressData.bars;  let i = index; ">
+                        {{progressString}} {{i+1}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="col-sm-8 col-lg-4">
+            <div class="btn-box">
+             <span *ngFor="let btn of progressData.buttons ">
+               <app-button (actionEmitter)="handleButtonHit($event)" [action]="btn"> </app-button>
+             </span>
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
